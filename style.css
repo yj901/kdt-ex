@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap");
+
+@import url("./styles/reset.css");
+@import url("./styles/variables.css");
+
+/* common */
+html {
+  font-size: 62.5%;
+}
+body {
+  font-size: 1.6rem;
+}
+
+/* main */
+main {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #333;
+  perspective: 1000px;
+}
+
+/*  section #circle */
+#circle {
+  width: 560px;
+  height: 700px;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: spacecircle 15s linear none infinite;
+  article {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.1);
+    backface-visibility: hidden;
+
+    &.arti1 {
+      transform: rotateY(0deg) translateZ(-530px);
+    }
+    &.arti2 {
+      transform: rotateY(60deg) translateZ(-530px);
+    }
+    &.arti3 {
+      transform: rotateY(120deg) translateZ(-530px);
+    }
+    &.arti4 {
+      transform: rotateY(180deg) translateZ(-530px);
+    }
+    &.arti5 {
+      transform: rotateY(240deg) translateZ(-530px);
+    }
+    &.arti6 {
+      transform: rotateY(300deg) translateZ(-530px);
+    }
+  }
+}
+
+@keyframes spacecircle {
+  0% {
+    transform: rotateY(0);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
