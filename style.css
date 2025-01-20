@@ -20,16 +20,16 @@ main {
   justify-content: center;
   align-items: center;
   background: #333;
-  perspective: 1000px;
+  perspective: 900px;
 }
 
 /*  section #circle */
 #circle {
-  width: 560px;
+  width: 700px;
   height: 700px;
   position: relative;
   transform-style: preserve-3d;
-  animation: spacecircle 15s linear none infinite;
+  animation: spacecircle 30s linear none infinite;
   article {
     width: 100%;
     height: 100%;
@@ -40,22 +40,22 @@ main {
     backface-visibility: hidden;
 
     &.arti1 {
-      transform: rotateY(0deg) translateZ(-530px);
+      transform: rotateY(0deg) translateZ(-660px);
     }
     &.arti2 {
-      transform: rotateY(60deg) translateZ(-530px);
+      transform: rotateY(60deg) translateZ(-660px);
     }
     &.arti3 {
-      transform: rotateY(120deg) translateZ(-530px);
+      transform: rotateY(120deg) translateZ(-660px);
     }
     &.arti4 {
-      transform: rotateY(180deg) translateZ(-530px);
+      transform: rotateY(180deg) translateZ(-660px);
     }
     &.arti5 {
-      transform: rotateY(240deg) translateZ(-530px);
+      transform: rotateY(240deg) translateZ(-660px);
     }
     &.arti6 {
-      transform: rotateY(300deg) translateZ(-530px);
+      transform: rotateY(300deg) translateZ(-660px);
     }
   }
 }
