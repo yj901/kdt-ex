@@ -19,8 +19,8 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #333;
-  perspective: 1300px;
+  background: #efeeed;
+  /* perspective: 1300px; */
 }
 
 /*  section #circle */
@@ -28,34 +28,39 @@ main {
   width: 800px;
   height: 600px;
   position: relative;
-  transform-style: preserve-3d;
-  animation: spacecircle 40s linear none infinite;
+  /* transform-style: preserve-3d;
+  animation: spacecircle 40s linear none infinite; */
   article {
     width: 100%;
     height: 100%;
     position: absolute;
     top: 0;
     left: 0;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 1);
     backface-visibility: hidden;
 
     &.arti1 {
-      transform: rotateY(0deg) translateZ(-765px);
+      /* transform: rotateY(0deg) translateZ(-765px); */
     }
     &.arti2 {
-      transform: rotateY(60deg) translateZ(-765px);
+      display: none;
+      /* transform: rotateY(60deg) translateZ(-765px); */
     }
     &.arti3 {
-      transform: rotateY(120deg) translateZ(-765px);
+      display: none;
+      /* transform: rotateY(120deg) translateZ(-765px); */
     }
     &.arti4 {
-      transform: rotateY(180deg) translateZ(-765px);
+      display: none;
+      /* transform: rotateY(180deg) translateZ(-765px); */
     }
     &.arti5 {
-      transform: rotateY(240deg) translateZ(-765px);
+      display: none;
+      /* transform: rotateY(240deg) translateZ(-765px); */
     }
     &.arti6 {
-      transform: rotateY(300deg) translateZ(-765px);
+      display: none;
+      /* transform: rotateY(300deg) translateZ(-765px); */
     }
   }
 }
