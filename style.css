@@ -30,7 +30,7 @@ main {
   justify-content: center;
   align-items: center;
   background: #efeeed;
-  /* perspective: 1300px; */
+  perspective: 1300px;
 }
 
 /*  section #circle */
@@ -38,8 +38,8 @@ main {
   width: 800px;
   height: 600px;
   position: relative;
-  /* transform-style: preserve-3d;
-  animation: spacecircle 40s linear none infinite; */
+  transform-style: preserve-3d;
+  animation: spacecircle 40s linear none infinite;
   article {
     width: 100%;
     height: 100%;
@@ -47,17 +47,29 @@ main {
     top: 0;
     left: 0;
     backface-visibility: hidden;
-
+    .arti_tit {
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-size: 2.5rem;
+      opacity: 0;
+      transition: all 0.5s;
+    }
+    &:hover h1 {
+      opacity: 1;
+      top: -50px;
+    }
     &.arti1 {
-      display: none;
+      /* display: none; */
       background: var(--main-light);
-      /* transform: rotateY(0deg) translateZ(-765px); */
+      transform: rotateY(0deg) translateZ(-765px);
       position: relative;
-      overflow: hidden;
       border-radius: 15px;
       box-shadow: var(--shadow);
       .inner {
+        position: relative;
         display: flex;
+        overflow: hidden;
         .box {
           width: 100%;
           padding: 50px;
@@ -94,8 +106,8 @@ main {
       }
     }
     &.arti2 {
-      display: none;
-      /* transform: rotateY(60deg) translateZ(-765px); */
+      /* display: none; */
+      transform: rotateY(-60deg) translateZ(-765px);
       .wrap {
         height: 100%;
         display: grid;
@@ -184,8 +196,8 @@ main {
       }
     }
     &.arti3 {
-      display: none;
-      /* transform: rotateY(120deg) translateZ(-765px); */
+      /* display: none; */
+      transform: rotateY(-120deg) translateZ(-765px);
       .mind_list {
         height: 100%;
         display: grid;
@@ -214,8 +226,8 @@ main {
       }
     }
     &.arti4 {
-      display: none;
-      /* transform: rotateY(180deg) translateZ(-765px); */
+      /* display: none; */
+      transform: rotateY(-180deg) translateZ(-765px);
       .ingredients_list {
         height: 100%;
         display: grid;
@@ -223,36 +235,61 @@ main {
         grid-template-rows: repeat(2, 1fr);
         grid-gap: 20px;
         li {
-          background: center/cover no-repeat;
           display: flex;
           justify-content: center;
           align-items: flex-end;
           padding: 32px;
           border-radius: 15px;
           box-shadow: var(--shadow);
+          overflow: hidden;
+          position: relative;
           p {
             font-size: 3rem;
             font-weight: 600;
             color: var(--main-light);
           }
+          &:hover {
+            &::before {
+              transform: scale(1.1);
+            }
+          }
+          &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: center/cover no-repeat;
+            z-index: -1;
+            transition: transform 0.6s;
+          }
           &:nth-child(1) {
-            background-image: url("./images/fr4-lentil.jpg");
+            &::before {
+              background-image: url("./images/fr4-lentil.jpg");
+            }
           }
           &:nth-child(2) {
-            background-image: url("./images/fr4-rice.jpg");
+            &::before {
+              background-image: url("./images/fr4-rice.jpg");
+            }
           }
           &:nth-child(3) {
-            background-image: url("./images/fr4-vegetables.jpg");
+            &::before {
+              background-image: url("./images/fr4-vegetables.jpg");
+            }
           }
           &:nth-child(4) {
-            background-image: url("./images/fr4-oil.jpg");
+            &::before {
+              background-image: url("./images/fr4-oil.jpg");
+            }
           }
         }
       }
     }
     &.arti5 {
-      display: none;
-      /* transform: rotateY(240deg) translateZ(-765px); */
+      /* display: none; */
+      transform: rotateY(-240deg) translateZ(-765px);
       .morning_list {
         height: 100%;
         display: grid;
@@ -263,62 +300,109 @@ main {
           border-radius: 15px;
           box-shadow: var(--shadow);
           padding: 40px;
+          position: relative;
+          overflow: hidden;
           p {
             text-align: center;
             font-size: 2rem;
             font-weight: 600;
             color: var(--main-light);
           }
+          &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: center/cover no-repeat;
+            z-index: -1;
+            transition: transform 0.6s;
+          }
           &:nth-child(1) {
-            background-image: url("./images/fr5-green.jpg");
+            &::before {
+              background-image: url("./images/fr5-green.jpg");
+            }
           }
           &:nth-child(2) {
-            background-image: url("./images/fr5-egg.jpg");
+            &::before {
+              background-image: url("./images/fr5-egg.jpg");
+            }
           }
           &:nth-child(3) {
-            background-image: url("./images/fr5-drink.jpg");
+            &::before {
+              background-image: url("./images/fr5-drink.jpg");
+            }
+          }
+          &:hover {
+            &::before {
+              transform: scale(1.1);
+            }
           }
         }
       }
     }
     &.arti6 {
       display: block;
-      /* transform: rotateY(300deg)  translateZ(-765px); */
+      transform: rotateY(-300deg) translateZ(-765px);
       .recipe_banners {
         height: 100%;
         display: grid;
         grid-template-rows: repeat(2, 1fr);
         grid-gap: 20px;
         .banner {
-          background: center/cover no-repeat;
           border-radius: 15px;
           box-shadow: var(--shadow);
           padding: 50px 60px;
           color: var(--main-light);
-          h3 {
-            font-size: 3.8rem;
-            font-weight: 600;
-          }
-          .recipe-list {
-            margin-top: 40px;
-            li {
-              font-size: 1.6rem;
-              font-weight: 300;
-              line-height: 1.5;
-              &.sauce {
-                display: flex;
-                .sdesc {
-                  margin-left: 15px;
-                  width: 48%;
+          overflow: hidden;
+          position: relative;
+          .con {
+            h3 {
+              font-size: 3.8rem;
+              font-weight: 600;
+            }
+            .recipe-list {
+              margin-top: 40px;
+              li {
+                font-size: 1.6rem;
+                font-weight: 300;
+                line-height: 1.5;
+                &.sauce {
+                  display: flex;
+                  .sdesc {
+                    margin-left: 15px;
+                    width: 48%;
+                  }
                 }
               }
             }
           }
+          &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: center/cover no-repeat;
+            z-index: -1;
+            transition: transform 0.6s;
+          }
           &:nth-child(1) {
-            background-image: url("./images/fr6-cucumber.jpg");
+            &::before {
+              background-image: url("./images/fr6-cucumber.jpg");
+            }
           }
           &:nth-child(2) {
-            background-image: url("./images/fr6-tofu.jpg");
+            &::before {
+              background-image: url("./images/fr6-tofu.jpg");
+            }
+          }
+          &:hover {
+            &::before {
+              transform: scale(1.1);
+            }
           }
         }
       }
