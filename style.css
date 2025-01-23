@@ -17,9 +17,6 @@ body {
   width: 100%;
   height: 100%;
 }
-.mc {
-  color: var(--mc);
-}
 
 /* main */
 main {
@@ -53,23 +50,24 @@ main {
       top: 0;
       font-size: 2.5rem;
       opacity: 0;
+      z-index: -1;
       transition: all 0.5s;
     }
-    &:hover h1 {
+    &:hover .arti_tit {
       opacity: 1;
       top: -50px;
     }
     &.arti1 {
       /* display: none; */
-      background: var(--main-light);
       transform: rotateY(0deg) translateZ(-765px);
       position: relative;
-      border-radius: 15px;
-      box-shadow: var(--shadow);
       .inner {
         position: relative;
         display: flex;
         overflow: hidden;
+        background: var(--main-light);
+        border-radius: 15px;
+        box-shadow: var(--shadow);
         .box {
           width: 100%;
           padding: 50px;
@@ -108,20 +106,24 @@ main {
     &.arti2 {
       /* display: none; */
       transform: rotateY(-60deg) translateZ(-765px);
-      .wrap {
+      .points_wrap {
         height: 100%;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(2, 1fr);
         grid-gap: 20px;
-        & > div {
+        .point {
           height: 100%;
           background: var(--main-light);
           border-radius: 15px;
           box-shadow: var(--shadow);
           position: relative;
           overflow: hidden;
-          .point {
+          transition: transform 0.5s;
+          .mc {
+            transition: color 0.5s;
+          }
+          .pnum {
             color: var(--mc);
             font-size: 1.8rem;
             font-weight: 700;
@@ -136,7 +138,7 @@ main {
               }
             }
           }
-          &.point1 {
+          &.box1 {
             grid-column: 1 / span 2;
             .con {
               h5 {
@@ -155,7 +157,7 @@ main {
               top: -14%;
             }
           }
-          &.point2 {
+          &.box2 {
             .con {
               h4 {
                 font-size: 2rem;
@@ -169,26 +171,34 @@ main {
               }
             }
           }
-          &.point3 {
-            background: var(--mc);
-            color: var(--main-light);
-            .point {
-              color: var(--main-light);
-              font-weight: 600;
+          &.box3 {
+            transition: all 0.5s;
+            .pnum {
+              transition: color 0.5s;
             }
             .con {
-              strong {
-                font-weight: 600;
-              }
               h3 {
                 font-size: 4rem;
-                font-weight: 300;
+                font-weight: 400;
               }
               p {
                 margin-top: 15px;
                 font-size: 2rem;
                 line-height: 1.3;
                 font-weight: 300;
+              }
+            }
+          }
+          &:hover {
+            transform: scale(1.05);
+            .mc {
+              color: var(--mc);
+            }
+            &.box3 {
+              background: var(--mc);
+              color: var(--main-light);
+              .pnum {
+                color: var(--main-light);
               }
             }
           }
@@ -207,20 +217,29 @@ main {
           background: #fff;
           border-radius: 15px;
           box-shadow: var(--shadow);
-          padding: 32px;
+          padding: 32px 36px;
           display: flex;
           align-items: center;
-          gap: 10px;
+          gap: 12px;
+          transition: all 0.5s;
           .mind_icon {
-            width: 3rem;
+            width: 3.2rem;
             text-align: center;
             i {
-              font-size: 2.6rem;
+              font-size: 2.8rem;
               color: var(--mc);
             }
           }
           p {
-            font-size: 1.8rem;
+            font-size: 2rem;
+          }
+          &:hover {
+            background: var(--mc);
+            transform: scale(1.05);
+            .mind_icon i,
+            p {
+              color: var(--main-light);
+            }
           }
         }
       }
@@ -292,16 +311,17 @@ main {
       transform: rotateY(-240deg) translateZ(-765px);
       .morning_list {
         height: 100%;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-gap: 20px;
+        display: flex;
+        gap: 20px;
         li {
+          flex: 1;
           background: center/cover no-repeat;
           border-radius: 15px;
           box-shadow: var(--shadow);
-          padding: 40px;
+          padding: 40px 20px;
           position: relative;
           overflow: hidden;
+          transition: flex 0.5s;
           p {
             text-align: center;
             font-size: 2rem;
@@ -335,15 +355,16 @@ main {
             }
           }
           &:hover {
+            flex: 1.5;
             &::before {
-              transform: scale(1.1);
+              transform: scale(1.05);
             }
           }
         }
       }
     }
     &.arti6 {
-      display: block;
+      /* display: none; */
       transform: rotateY(-300deg) translateZ(-765px);
       .recipe_banners {
         height: 100%;
