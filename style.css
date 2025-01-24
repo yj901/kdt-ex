@@ -36,7 +36,7 @@ main {
   height: 600px;
   position: relative;
   transform-style: preserve-3d;
-  animation: spacecircle 40s linear none infinite;
+  /* animation: spacecircle 40s linear none infinite; */
   article {
     width: 100%;
     height: 100%;
@@ -452,5 +452,16 @@ main {
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 799px) {
+  #circle {
+    zoom: 0.6;
+  }
+}
+@media screen and (max-width: 480px) {
+  #circle {
+    zoom: 0.45;
   }
 }
