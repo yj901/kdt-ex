@@ -62,7 +62,6 @@ main {
       top: -65px;
     }
     &.arti1 {
-      /* display: none; */
       transform: rotateY(0deg) translateZ(-765px);
       position: relative;
       .inner {
@@ -110,7 +109,6 @@ main {
       }
     }
     &.arti2 {
-      /* display: none; */
       transform: rotateY(-60deg) translateZ(-765px);
       .points_wrap {
         height: 100%;
@@ -212,7 +210,6 @@ main {
       }
     }
     &.arti3 {
-      /* display: none; */
       transform: rotateY(-120deg) translateZ(-765px);
       .mind_list {
         height: 100%;
@@ -251,7 +248,6 @@ main {
       }
     }
     &.arti4 {
-      /* display: none; */
       transform: rotateY(-180deg) translateZ(-765px);
       .ingredients_list {
         height: 100%;
@@ -313,7 +309,6 @@ main {
       }
     }
     &.arti5 {
-      /* display: none; */
       transform: rotateY(-240deg) translateZ(-765px);
       .morning_list {
         height: 100%;
@@ -370,7 +365,6 @@ main {
       }
     }
     &.arti6 {
-      /* display: none; */
       transform: rotateY(-300deg) translateZ(-765px);
       .recipe_banners {
         height: 100%;
@@ -462,6 +456,6 @@ main {
 }
 @media screen and (max-width: 480px) {
   #circle {
-    zoom: 0.47;
+    zoom: 0.46;
   }
 }
